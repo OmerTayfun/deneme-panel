@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRC Suite — Çoklu Standart Uyum Platformu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="layout">
+
+    <!-- ===== Yan Menü ===== -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">G</div>
+        <div class="brand-text">
+          <span class="brand-name">GRC Suite</span>
+          <span class="brand-sub">Çoklu Standart Uyum</span>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <div class="nav-group">YÖNETİM SİSTEMİ</div>
+        <button class="nav-item active" data-view="dashboard">
+          <span class="nav-ico">◫</span> Kontrol Paneli
+        </button>
+        <button class="nav-item" data-view="soa">
+          <span class="nav-ico">☑</span> Uygulanabilirlik (SOA)
+        </button>
+        <button class="nav-item" data-view="assets">
+          <span class="nav-ico">▣</span> Varlık Yönetimi
+        </button>
+        <button class="nav-item" data-view="risks">
+          <span class="nav-ico">◬</span> Risk Yönetimi
+        </button>
+
+        <div class="nav-group">DENETİM VE İYİLEŞTİRME</div>
+        <button class="nav-item" data-view="audits">
+          <span class="nav-ico">✓</span> İç Denetimler
+        </button>
+        <button class="nav-item" data-view="actions">
+          <span class="nav-ico">⟳</span> Düzeltici Aksiyonlar
+        </button>
+
+        <div class="nav-group">KAYIT VE PERFORMANS</div>
+        <button class="nav-item" data-view="documents">
+          <span class="nav-ico">▤</span> Dokümanlar
+        </button>
+        <button class="nav-item" data-view="kpis">
+          <span class="nav-ico">▥</span> KPI
+        </button>
+
+        <div class="nav-group">SİSTEM</div>
+        <button class="nav-item" data-view="settings">
+          <span class="nav-ico">⚙</span> Veri ve Ayarlar
+        </button>
+      </nav>
+
+      <div class="sidebar-foot">
+        <span id="footOrg">—</span>
+        <span class="foot-version">Prototip v0.1</span>
+      </div>
+    </aside>
+
+    <!-- ===== Ana İçerik ===== -->
+    <main class="main">
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" aria-label="Menüyü aç/kapat">☰</button>
+        <h1 id="pageTitle">Kontrol Paneli</h1>
+        <div class="topbar-right">
+          <span class="org-chip" id="orgChip">—</span>
+        </div>
+      </header>
+
+      <div class="content" id="content">
+        <!-- Görünümler app.js tarafından render edilir -->
+      </div>
+    </main>
+  </div>
+
+  <!-- ===== Modal ===== -->
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <div class="modal" role="dialog" aria-modal="true">
+      <div class="modal-head">
+        <h2 id="modalTitle">Başlık</h2>
+        <button class="modal-close" id="modalClose" aria-label="Kapat">✕</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+      <div class="modal-foot" id="modalFoot"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" hidden></div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
