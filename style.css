@@ -47,6 +47,9 @@ input, select, textarea { font-family: inherit; font-size: 14px; }
 
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
+/* hidden özniteliği her zaman display kurallarını ezsin (modal/toast için kritik) */
+[hidden] { display: none !important; }
+
 /* ===== Yerleşim ===== */
 .layout { display: flex; min-height: 100vh; }
 
